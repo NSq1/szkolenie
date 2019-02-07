@@ -4,6 +4,7 @@ description: Szkolenie java dla początkujących
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "nsq1.github.io/szkolenie/" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: g2forge/charcoal
+theme: jekyll-theme-charcoal
 author_name: NSq1
 author_url: https://github.com/NSq1/ 
 repository: NSq1/szkolenie
