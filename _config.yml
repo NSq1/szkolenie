@@ -1,11 +1,11 @@
 # Site settings
 title: Szkolenie
 description: Szkolenie java dla początkujących
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "nsq1.github.io/szkolenie/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "szkolenie" # the subpath of your site, e.g. /blog
+url: "https://nsq1.github.io/szkolenie/" # the base hostname & protocol for your site, e.g. http://example.com
 
 theme: jekyll-theme-charcoal
 author_name: NSq1
-author_url: https://github.com/NSq1/ 
+author_url: https://github.com/NSq1/
 repository: NSq1/szkolenie
 toc: true                             # Adds a table of contents to the left sidebar of the page
