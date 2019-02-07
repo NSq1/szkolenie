@@ -3,28 +3,122 @@ layout: default
 ---
 
 <body>
-    <h1>Szkolenie</h1>
+    <style>
+    ol {
+        list-style-type: none;
+        counter-reset: item;
+    }
+
+    ol.h1>li,
+    h1 {
+        font-size: 2em;
+    }
+
+    ol.h1>li>div {
+        font-size: initial;
+    }
+
+    ol.h2>li,
+    h2 {
+        font-size: 1.4em;
+    }
+
+    ol.h2>li>div {
+        font-size: initial;
+    }
+
+    ol>li {
+        display: table;
+        counter-increment: item;
+        margin-bottom: 0.6em;
+    }
+
+    ol>li:before {
+        content: counters(item, ".") ". ";
+        display: table-cell;
+        padding-right: 0.6em;
+    }
+
+    li ol>li {
+        margin: 0;
+    }
+
+    li ol>li:before {
+        content: counters(item, ".") " ";
+    }
+    </style>
     <ol class="h1">
-        <li><h1>Słowem wstępu</h1>
-            <p>Na szkolenie będą składały się następujące elementy:</p>
-            <ul>
-                <li>Dokument tekstowy zawierający<ul>
-                        <li>materiały o charakterze informacyjnym (np. instrukcja konfiguracji stacji roboczej)</li>
-                        <li>odnośniki do materiałów zewnętrznych (np. tutorial internetowy)</li>
-                        <li>treści zadań do realizacji/odnośniki do repozytoriów git zawierających materiały</li>
-                    </ul>
-                </li>
-                <li>Konsultacje<ul>
-                        <li>w formie tekstowej (indywidualne i grupowe) przy pomocy komunikatora Discord, głównie w godzinach wieczornych.</li>
-                        <li>&quot;osobiste&quot; w godzinach pracy, preferowanie przed spotkaniami projektowymi umawiane ad hoc</li>
-                    </ul>
-                </li>
-                <li>Spotkanie grupowe<ul>
-                        <li>około 2h raz na 2 tygodnie</li>
-                        <li>termin będzie ustalany podczas poprzedniego spotkania za wyjątkiem pierwszego, którego termin zostanie podany na Discord.</li>
-                    </ul>
-                </li>
-            </ul>
+        <li>
+            <div><h1>Słowem wstępu</h1>
+                <p>Na szkolenie będą składały się następujące elementy:</p>
+                <ul>
+                    <li>Dokument tekstowy zawierający<ul>
+                            <li>materiały o charakterze informacyjnym (np. instrukcja konfiguracji stacji roboczej)</li>
+                            <li>odnośniki do materiałów zewnętrznych (np. tutorial internetowy)</li>
+                            <li>treści zadań do realizacji/odnośniki do repozytoriów git zawierających materiały</li>
+                        </ul>
+                    </li>
+                    <li>Konsultacje<ul>
+                            <li>w formie tekstowej (indywidualne i grupowe) przy pomocy komunikatora Discord, głównie w godzinach wieczornych.</li>
+                            <li>&quot;osobiste&quot; w godzinach pracy, preferowanie przed spotkaniami projektowymi umawiane ad hoc</li>
+                        </ul>
+                    </li>
+                    <li>Spotkanie grupowe<ul>
+                            <li>około 2h raz na 2 tygodnie</li>
+                            <li>termin będzie ustalany podczas poprzedniego spotkania za wyjątkiem pierwszego, którego termin zostanie podany na Discord.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Podczas szkolenia wielokrotnie będzie przewijał się tekst "NSq1" (często w towarzystwie obrazka wiewiórki). Jest to nazwa mojego konta użytkownika i w większości przykładowych komend/wycinkach ekranu powinien on być zastąpiony przez prywatną nazwę kont utworzonych w paragrafie 2.</p>
+            </div>
+        </li>
+        <li>
+            <div><h1>Założenie kont oraz instalacja wymaganych aplikacji</h1>
+                <ol class="h2">
+                    <li>
+                        <div><h2>Discord (+ konto)</h2>
+                            <ul>
+                                <li>Klikamy/otwieramy link na wybranym urządzeniu: skontaktuj się ze mną
+                                <li> Instalujemy oprogramowanie dla urządzenia/używamy wewnątrz przeglądarki.</li>
+                                <li> Zakładamy konto/logujemy się i witamy z resztą na grupie eb-java</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div><h2>GitHub</h2>
+                            <p>Założyć konto i następnie umieścić jego nazwę lub adres email na który zostało założone na kanale discord „start”. Przed rozpoczęciem zadania drugiego będę musiał dodać wskazane konto do grupy na GitHub.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><h2>Java SDK + JRE 1.8</h2>
+                            <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ">Java SE Development Kit 8 Downloads</a></p>
+                            <img src="./assets/jdk_license.jpg"/>
+                            <p>Akceptujemy licencje i pobieramy odpowiednią javę (preferujemy x64 jeśli mamy windows 64 bitowy). Instalator po zainstalowaniu SDK powinien zaproponować instalację JRE, na którą również wyrażamy zgodę.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><h2>Eclipse</h2>
+                            <p>Pobieramy oraz instalujemy <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Enterprise Java Developers</a></p>
+                            <img src="./assets/eclipse_jee.png"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div><h2>Git</h2>
+                            <p>Pobieramy oraz instalujemy <a href="https://git-scm.com/downloads">Download for Windows</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div><h2>Opcjonalnie: Google translate w Chrome </h2>
+                            <p>Większość materiałów dodatkowych (stron WWW) będzie anglojęzyczna, współpracę może ułatwić wtyczka do chrome umożliwiająca szybkie przetłumaczenie fragmentu/strony. Proszę jedynie mieć na uwadze, że strony mogą (i pewnie często będą) zawierać kod/komendy w postaci tekstu, a nie obrazka i one również zostaną przetłumaczone razem z resztą strony i w związku z tym będą błędne.</p>
+                            <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en">google-translate</a></p>
+                            <div>
+                                <div style="width:55%;float:left;padding:2%"><img src="./assets/google_translate.png"/></div>
+                                    <div style="width:40%;float:left">Po instalacji klikamy prawym na wtyczkę, wybieramy opcje i zmieniamy język tłumaczenia na Polski.</div>
+                                </div>
+                            </div>
+                    </li>
+                </ol>
+            </div>
         </li>
     </ol>
 </body>
