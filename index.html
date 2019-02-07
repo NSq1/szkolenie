@@ -45,9 +45,19 @@ li ol>li:before {
     content: counters(item, ".") " ";
 }
 </style>
+<script>
+realignViewPoint = function(){
+	if(window.location.href.indexOf("#") > 0){
+    	document.documentElement.scrollTop = document.documentElement.scrollTop - $("div#header").height() - 5;
+    	console.log('View Point realigned');
+    }
+}
+window.addEventListener('hashchange', realignViewPoint, false);
+window.addEventListener('load', realignViewPoint, false);
+</script>
 <ol class="h1">
     <li>
-        <div><h1>Słowem wstępu</h1>
+        <div><h1 id="instroduction">Słowem wstępu</h1>
             <p>Na szkolenie będą składały się następujące elementy:</p>
             <ul>
                 <li>Dokument tekstowy zawierający<ul>
@@ -71,10 +81,10 @@ li ol>li:before {
         </div>
     </li>
     <li>
-        <div><h1>Założenie kont oraz instalacja wymaganych aplikacji</h1>
+        <div><h1 id="installation">Założenie kont oraz instalacja wymaganych aplikacji</h1>
             <ol class="h2">
                 <li>
-                    <div><h2>Discord (+ konto)</h2>
+                    <div><h2 id="discord">Discord (+ konto)</h2>
                         <ul>
                             <li>Klikamy/otwieramy link na wybranym urządzeniu: skontaktuj się ze mną
                             <li> Instalujemy oprogramowanie dla urządzenia/używamy wewnątrz przeglądarki.</li>
@@ -83,30 +93,30 @@ li ol>li:before {
                     </div>
                 </li>
                 <li>
-                    <div><h2>GitHub</h2>
+                    <div><h2 id="github">GitHub</h2>
                         <p>Założyć konto i następnie umieścić jego nazwę lub adres email na który zostało założone na kanale discord „start”. Przed rozpoczęciem zadania drugiego będę musiał dodać wskazane konto do grupy na GitHub.</p>
                     </div>
                 </li>
                 <li>
-                    <div><h2>Java SDK + JRE 1.8</h2>
+                    <div><h2 id="jdk8-downloads-2133151">Java SDK + JRE 1.8</h2>
                         <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ">Java SE Development Kit 8 Downloads</a></p>
                         <img src="./assets/install/jdk_license.jpg"/>
                         <p>Akceptujemy licencje i pobieramy odpowiednią javę (preferujemy x64 jeśli mamy windows 64 bitowy). Instalator po zainstalowaniu SDK powinien zaproponować instalację JRE, na którą również wyrażamy zgodę.</p>
                     </div>
                 </li>
                 <li>
-                    <div><h2>Eclipse</h2>
+                    <div><h2 id="eclipse">Eclipse</h2>
                         <p>Pobieramy oraz instalujemy <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Enterprise Java Developers</a></p>
                         <img src="./assets/install/eclipse_jee.png"/>
                         </div>
                 </li>
                 <li>
-                    <div><h2>Git</h2>
+                    <div><h2 id="git">Git</h2>
                         <p>Pobieramy oraz instalujemy <a href="https://git-scm.com/downloads">Download for Windows</a></p>
                     </div>
                 </li>
                 <li>
-                    <div><h2>Opcjonalnie: Google translate w Chrome </h2>
+                    <div><h2 id="google_translate">Opcjonalnie: Google translate w Chrome </h2>
                         <p>Większość materiałów dodatkowych (stron WWW) będzie anglojęzyczna, współpracę może ułatwić wtyczka do chrome umożliwiająca szybkie przetłumaczenie fragmentu/strony. Proszę jedynie mieć na uwadze, że strony mogą (i pewnie często będą) zawierać kod/komendy w postaci tekstu, a nie obrazka i one również zostaną przetłumaczone razem z resztą strony i w związku z tym będą błędne.</p>
                         <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en">google-translate</a></p>
                         <div>
@@ -119,7 +129,7 @@ li ol>li:before {
         </div>
     </li>
     <li>
-        <div><h1>Hello World</h1>
+        <div><h1 id="HelloWorld">Hello World</h1>
             <ol class="h2">
                 <li>
                     <div>
@@ -131,7 +141,7 @@ li ol>li:before {
                 <li>
                     <div>
                         <h2>Uruchamiamy Eclipse</h2>
-                        <p>Odszukujemy i uruchamiamy <img style="height:2em;" src="./assets/helloworld/eclipse_icon.jpg"/></p>
+                        <p>Odszukujemy i uruchamiamy <img style="vertical-align:middle;height:2em;" src="./assets/helloworld/eclipse_icon.jpg"/></p>
                             <p>Eclipse poprosi nas o wyznaczenie przestrzeni roboczej na rozwijane projekty. Mogą być to nawet "moje dokumeny", ale radzę stworzyć podkatalog związanych tylko i wyłącznie z naszym szkoleniem. U mnie wygląda to następująco:</p>
                             <img src="./assets/helloworld/eclipse_workspace.jpg"/>
                             <p>Eclipse przywita nas powitalną zakładką "Welcome", którą możemy od razu zamknąć. Eclipse powinien wyglądać w następujący sposób.</p>
@@ -146,7 +156,7 @@ li ol>li:before {
                 <li>
                     <div>
                         <h2>Uruchamiamy Git Bash</h2>
-                        <p>Odszukujemy i uruchamiamy <img style="height:2em;" src="./assets/helloworld/git_icon.jpg"/> </p>
+                        <p>Odszukujemy i uruchamiamy <img style="vertical-align:middle;height:2em;" src="./assets/helloworld/git_icon.jpg"/> </p>
                             <p>Następnie przy pomocy komendy ‘cd’ przechodzimy do katalogu, który wybraliśmy jako workspace dla Eclipse. U mnie jest to:</p>
                             <pre><span>$ cd /c/Users/micha/OneDrive/eclipse-workspace/</span></pre>
                     </div>
@@ -154,12 +164,13 @@ li ol>li:before {
                 <li>
                     <div>
                         <h2>Ściągamy projekt Hello World</h2>
-                        <p>Wchodzimy na <a href="https://github.com/eb-java/hello-world">eb-java/hello-world</a> a następnie w prawym górnym rogu wybieramy opcję <img style="height:1em;" src="./assets/helloworld/fork.jpg"/>. Wybieramy stworzenie projektu w przestrzeni naszego użytkownika.</p>
+                        <p>Wchodzimy na <a href="https://github.com/eb-java/hello-world">eb-java/hello-world</a> a następnie w prawym górnym rogu wybieramy opcję <img style="vertical-align:middle;height:1em;" src="./assets/helloworld/fork.jpg"/>. Wybieramy stworzenie projektu w przestrzeni naszego użytkownika.</p>
                             <img src="./assets/helloworld/fork_details.jpg"/>
                             <p>Po chwili powinniśmy zobaczyć stronę podobną do tej:</p>
                             <img src="./assets/helloworld/github_repo.jpg"/>
-                            <p>Klikamy na i kopiujemy ten link do konsoli git bash poprzedzając go tekstem "git clone ".</p>
-                            <p>Komenda git i jej efekt powinien wyglądać jak ta poniżej.</p>
+                            <p>Klikamy na <img style="vertical-align:middle;height:1em;" src="./assets/helloworld/github_download.jpg"/> i kopiujemy ten link do konsoli git bash poprzedzając go tekstem "git clone ".</p>
+                                <p>Komenda git i jej efekt powinien wyglądać jak ta poniżej.</p>
+                                <img src="./assets/helloworld/git_clone.jpg"/>
                     </div>
                 </li>
             </ol>
