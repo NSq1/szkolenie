@@ -1,172 +1,169 @@
 ---
 layout: default
 ---
+<style>
+ol {
+    list-style-type: none;
+    counter-reset: item;
+}
 
-<body>
-    <style>
-    ol {
-        list-style-type: none;
-        counter-reset: item;
-    }
+ol.h1>li,
+h1 {
+    font-size: 2em;
+}
 
-    ol.h1>li,
-    h1 {
-        font-size: 2em;
-    }
+ol.h1>li>div {
+    font-size: initial;
+}
 
-    ol.h1>li>div {
-        font-size: initial;
-    }
+ol.h2>li,
+h2 {
+    font-size: 1.4em;
+}
 
-    ol.h2>li,
-    h2 {
-        font-size: 1.4em;
-    }
+ol.h2>li>div {
+    font-size: initial;
+}
 
-    ol.h2>li>div {
-        font-size: initial;
-    }
+ol>li {
+    display: table;
+    counter-increment: item;
+    margin-bottom: 0.6em;
+}
 
-    ol>li {
-        display: table;
-        counter-increment: item;
-        margin-bottom: 0.6em;
-    }
+ol>li:before {
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 0.6em;
+}
 
-    ol>li:before {
-        content: counters(item, ".") ". ";
-        display: table-cell;
-        padding-right: 0.6em;
-    }
+li ol>li {
+    margin: 0;
+}
 
-    li ol>li {
-        margin: 0;
-    }
-
-    li ol>li:before {
-        content: counters(item, ".") " ";
-    }
-    </style>
-    <ol class="h1">
-        <li>
-            <div><h1>Słowem wstępu</h1>
-                <p>Na szkolenie będą składały się następujące elementy:</p>
-                <ul>
-                    <li>Dokument tekstowy zawierający<ul>
-                            <li>materiały o charakterze informacyjnym (np. instrukcja konfiguracji stacji roboczej)</li>
-                            <li>odnośniki do materiałów zewnętrznych (np. tutorial internetowy)</li>
-                            <li>treści zadań do realizacji/odnośniki do repozytoriów git zawierających materiały</li>
+li ol>li:before {
+    content: counters(item, ".") " ";
+}
+</style>
+<ol class="h1">
+    <li>
+        <div><h1>Słowem wstępu</h1>
+            <p>Na szkolenie będą składały się następujące elementy:</p>
+            <ul>
+                <li>Dokument tekstowy zawierający<ul>
+                        <li>materiały o charakterze informacyjnym (np. instrukcja konfiguracji stacji roboczej)</li>
+                        <li>odnośniki do materiałów zewnętrznych (np. tutorial internetowy)</li>
+                        <li>treści zadań do realizacji/odnośniki do repozytoriów git zawierających materiały</li>
+                    </ul>
+                </li>
+                <li>Konsultacje<ul>
+                        <li>w formie tekstowej (indywidualne i grupowe) przy pomocy komunikatora Discord, głównie w godzinach wieczornych.</li>
+                        <li>&quot;osobiste&quot; w godzinach pracy, preferowanie przed spotkaniami projektowymi umawiane ad hoc</li>
+                    </ul>
+                </li>
+                <li>Spotkanie grupowe<ul>
+                        <li>około 2h raz na 2 tygodnie</li>
+                        <li>termin będzie ustalany podczas poprzedniego spotkania za wyjątkiem pierwszego, którego termin zostanie podany na Discord.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Podczas szkolenia wielokrotnie będzie przewijał się tekst "NSq1" (często w towarzystwie obrazka wiewiórki). Jest to nazwa mojego konta użytkownika i w większości przykładowych komend/wycinkach ekranu powinien on być zastąpiony przez prywatną nazwę kont utworzonych w paragrafie 2.</p>
+        </div>
+    </li>
+    <li>
+        <div><h1>Założenie kont oraz instalacja wymaganych aplikacji</h1>
+            <ol class="h2">
+                <li>
+                    <div><h2>Discord (+ konto)</h2>
+                        <ul>
+                            <li>Klikamy/otwieramy link na wybranym urządzeniu: skontaktuj się ze mną
+                            <li> Instalujemy oprogramowanie dla urządzenia/używamy wewnątrz przeglądarki.</li>
+                            <li> Zakładamy konto/logujemy się i witamy z resztą na grupie eb-java</li>
                         </ul>
-                    </li>
-                    <li>Konsultacje<ul>
-                            <li>w formie tekstowej (indywidualne i grupowe) przy pomocy komunikatora Discord, głównie w godzinach wieczornych.</li>
-                            <li>&quot;osobiste&quot; w godzinach pracy, preferowanie przed spotkaniami projektowymi umawiane ad hoc</li>
-                        </ul>
-                    </li>
-                    <li>Spotkanie grupowe<ul>
-                            <li>około 2h raz na 2 tygodnie</li>
-                            <li>termin będzie ustalany podczas poprzedniego spotkania za wyjątkiem pierwszego, którego termin zostanie podany na Discord.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>Podczas szkolenia wielokrotnie będzie przewijał się tekst "NSq1" (często w towarzystwie obrazka wiewiórki). Jest to nazwa mojego konta użytkownika i w większości przykładowych komend/wycinkach ekranu powinien on być zastąpiony przez prywatną nazwę kont utworzonych w paragrafie 2.</p>
-            </div>
-        </li>
-        <li>
-            <div><h1>Założenie kont oraz instalacja wymaganych aplikacji</h1>
-                <ol class="h2">
-                    <li>
-                        <div><h2>Discord (+ konto)</h2>
-                            <ul>
-                                <li>Klikamy/otwieramy link na wybranym urządzeniu: skontaktuj się ze mną
-                                <li> Instalujemy oprogramowanie dla urządzenia/używamy wewnątrz przeglądarki.</li>
-                                <li> Zakładamy konto/logujemy się i witamy z resztą na grupie eb-java</li>
-                            </ul>
+                    </div>
+                </li>
+                <li>
+                    <div><h2>GitHub</h2>
+                        <p>Założyć konto i następnie umieścić jego nazwę lub adres email na który zostało założone na kanale discord „start”. Przed rozpoczęciem zadania drugiego będę musiał dodać wskazane konto do grupy na GitHub.</p>
+                    </div>
+                </li>
+                <li>
+                    <div><h2>Java SDK + JRE 1.8</h2>
+                        <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ">Java SE Development Kit 8 Downloads</a></p>
+                        <img src="./assets/install/jdk_license.jpg"/>
+                        <p>Akceptujemy licencje i pobieramy odpowiednią javę (preferujemy x64 jeśli mamy windows 64 bitowy). Instalator po zainstalowaniu SDK powinien zaproponować instalację JRE, na którą również wyrażamy zgodę.</p>
+                    </div>
+                </li>
+                <li>
+                    <div><h2>Eclipse</h2>
+                        <p>Pobieramy oraz instalujemy <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Enterprise Java Developers</a></p>
+                        <img src="./assets/install/eclipse_jee.png"/>
                         </div>
-                    </li>
-                    <li>
-                        <div><h2>GitHub</h2>
-                            <p>Założyć konto i następnie umieścić jego nazwę lub adres email na który zostało założone na kanale discord „start”. Przed rozpoczęciem zadania drugiego będę musiał dodać wskazane konto do grupy na GitHub.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div><h2>Java SDK + JRE 1.8</h2>
-                            <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ">Java SE Development Kit 8 Downloads</a></p>
-                            <img src="./assets/install/jdk_license.jpg"/>
-                            <p>Akceptujemy licencje i pobieramy odpowiednią javę (preferujemy x64 jeśli mamy windows 64 bitowy). Instalator po zainstalowaniu SDK powinien zaproponować instalację JRE, na którą również wyrażamy zgodę.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div><h2>Eclipse</h2>
-                            <p>Pobieramy oraz instalujemy <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Enterprise Java Developers</a></p>
-                            <img src="./assets/install/eclipse_jee.png"/>
-                        </div>
-                    </li>
-                    <li>
-                        <div><h2>Git</h2>
-                            <p>Pobieramy oraz instalujemy <a href="https://git-scm.com/downloads">Download for Windows</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div><h2>Opcjonalnie: Google translate w Chrome </h2>
-                            <p>Większość materiałów dodatkowych (stron WWW) będzie anglojęzyczna, współpracę może ułatwić wtyczka do chrome umożliwiająca szybkie przetłumaczenie fragmentu/strony. Proszę jedynie mieć na uwadze, że strony mogą (i pewnie często będą) zawierać kod/komendy w postaci tekstu, a nie obrazka i one również zostaną przetłumaczone razem z resztą strony i w związku z tym będą błędne.</p>
-                            <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en">google-translate</a></p>
-                            <div>
-                                <div style="width:55%;float:left;padding:2%"><img src="./assets/install/google_translate.png"/></div>
-                                    <div style="width:40%;float:left">Po instalacji klikamy prawym na wtyczkę, wybieramy opcje i zmieniamy język tłumaczenia na Polski.</div>
-                                </div>
+                </li>
+                <li>
+                    <div><h2>Git</h2>
+                        <p>Pobieramy oraz instalujemy <a href="https://git-scm.com/downloads">Download for Windows</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div><h2>Opcjonalnie: Google translate w Chrome </h2>
+                        <p>Większość materiałów dodatkowych (stron WWW) będzie anglojęzyczna, współpracę może ułatwić wtyczka do chrome umożliwiająca szybkie przetłumaczenie fragmentu/strony. Proszę jedynie mieć na uwadze, że strony mogą (i pewnie często będą) zawierać kod/komendy w postaci tekstu, a nie obrazka i one również zostaną przetłumaczone razem z resztą strony i w związku z tym będą błędne.</p>
+                        <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en">google-translate</a></p>
+                        <div>
+                            <div style="width:55%;float:left;padding:2%"><img src="./assets/install/google_translate.png"/></div>
+                                <div style="width:40%;float:left">Po instalacji klikamy prawym na wtyczkę, wybieramy opcje i zmieniamy język tłumaczenia na Polski.</div>
                             </div>
-                    </li>
-                </ol>
-            </div>
-        </li>
-        <li>
-            <div><h1>Hello World</h1>
-                <ol class="h2">
-                    <li>
-                        <div>
-                            <h2>Pierwsze kroki</h2>
-                            <p>Proszę o zapoznanie się/realizację ćwiczenia: </p>
-                            <p><a href="https://stormit.pl/pierwszy-program-java/">Jak napisać swój pierwszy program Java | Kurs Java</a></p>
                         </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h2>Uruchamiamy Eclipse</h2>
-                            <p>Odszukujemy i uruchamiamy <img style="height:2em;" src="./assets/helloworld/eclipse_icon.jpg"/></p>
-                                <p>Eclipse poprosi nas o wyznaczenie przestrzeni roboczej na rozwijane projekty. Mogą być to nawet "moje dokumeny", ale radzę stworzyć podkatalog związanych tylko i wyłącznie z naszym szkoleniem. U mnie wygląda to następująco:</p>
-                                <img src="./assets/helloworld/eclipse_workspace.jpg"/>
-                                <p>Eclipse przywita nas powitalną zakładką "Welcome", którą możemy od razu zamknąć. Eclipse powinien wyglądać w następujący sposób.</p>
-                                <img src="./assets/helloworld/eclipse_light.jpg"/>
-                                <p>Używam ciemnego motywu kolorów w Eclipse, z takiego będę również zamieszczał wycinki ekranu. Jeśli ktoś obawia się, że inna wersja 'kolorów' może mu utrudnić przyswojenie szkolenia, proponuję zmianę na identyczny z moim.</p>
-                                <p>W tym celu wchodzimy w opcje: Window>Preferences, w nowo otwartym oknie filtrujemy opcje słowem "theme" a następny w sekcji General/Appearance wybieramy Theme: Dark i akceptujemy zmiany</p>
-                                <img src="./assets/helloworld/eclipse_theme.jpg"/>
-                                <p>Eclipse powinien wyglądać następująco</p>
-                                <img src="./assets/helloworld/eclipse_dark.jpg"/>
+                </li>
+            </ol>
+        </div>
+    </li>
+    <li>
+        <div><h1>Hello World</h1>
+            <ol class="h2">
+                <li>
+                    <div>
+                        <h2>Pierwsze kroki</h2>
+                        <p>Proszę o zapoznanie się/realizację ćwiczenia: </p>
+                        <p><a href="https://stormit.pl/pierwszy-program-java/">Jak napisać swój pierwszy program Java | Kurs Java</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>Uruchamiamy Eclipse</h2>
+                        <p>Odszukujemy i uruchamiamy <img style="height:2em;" src="./assets/helloworld/eclipse_icon.jpg"/></p>
+                            <p>Eclipse poprosi nas o wyznaczenie przestrzeni roboczej na rozwijane projekty. Mogą być to nawet "moje dokumeny", ale radzę stworzyć podkatalog związanych tylko i wyłącznie z naszym szkoleniem. U mnie wygląda to następująco:</p>
+                            <img src="./assets/helloworld/eclipse_workspace.jpg"/>
+                            <p>Eclipse przywita nas powitalną zakładką "Welcome", którą możemy od razu zamknąć. Eclipse powinien wyglądać w następujący sposób.</p>
+                            <img src="./assets/helloworld/eclipse_light.jpg"/>
+                            <p>Używam ciemnego motywu kolorów w Eclipse, z takiego będę również zamieszczał wycinki ekranu. Jeśli ktoś obawia się, że inna wersja 'kolorów' może mu utrudnić przyswojenie szkolenia, proponuję zmianę na identyczny z moim.</p>
+                            <p>W tym celu wchodzimy w opcje: Window>Preferences, w nowo otwartym oknie filtrujemy opcje słowem "theme" a następny w sekcji General/Appearance wybieramy Theme: Dark i akceptujemy zmiany</p>
+                            <img src="./assets/helloworld/eclipse_theme.jpg"/>
+                            <p>Eclipse powinien wyglądać następująco</p>
+                            <img src="./assets/helloworld/eclipse_dark.jpg"/>
                         </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h2>Uruchamiamy Git Bash</h2>
-                            <p>Odszukujemy i uruchamiamy <img style="height:2em;" src="./assets/helloworld/git_icon.jpg"/> </p>
-                                <p>Następnie przy pomocy komendy ‘cd’ przechodzimy do katalogu, który wybraliśmy jako workspace dla Eclipse. U mnie jest to:</p>
-                                <pre><span>$ cd /c/Users/micha/OneDrive/eclipse-workspace/</span></pre>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h2>Ściągamy projekt Hello World</h2>
-                            <p>Wchodzimy na <a href="https://github.com/eb-java/hello-world">eb-java/hello-world</a> a następnie w prawym górnym rogu wybieramy opcję <img style="height:1em;" src="./assets/helloworld/fork.jpg"/>. Wybieramy stworzenie projektu w przestrzeni naszego użytkownika.</p>
-                                <img src="./assets/helloworld/fork_details.jpg"/>
-                                <p>Po chwili powinniśmy zobaczyć stronę podobną do tej:</p>
-                                <img src="./assets/helloworld/github_repo.jpg"/>
-                                <p>Klikamy na i kopiujemy ten link do konsoli git bash poprzedzając go tekstem "git clone ".</p>
-                                <p>Komenda git i jej efekt powinien wyglądać jak ta poniżej.</p>
-                            </p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </li>
-    </ol>
-</body>
+                </li>
+                <li>
+                    <div>
+                        <h2>Uruchamiamy Git Bash</h2>
+                        <p>Odszukujemy i uruchamiamy <img style="height:2em;" src="./assets/helloworld/git_icon.jpg"/> </p>
+                            <p>Następnie przy pomocy komendy ‘cd’ przechodzimy do katalogu, który wybraliśmy jako workspace dla Eclipse. U mnie jest to:</p>
+                            <pre><span>$ cd /c/Users/micha/OneDrive/eclipse-workspace/</span></pre>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>Ściągamy projekt Hello World</h2>
+                        <p>Wchodzimy na <a href="https://github.com/eb-java/hello-world">eb-java/hello-world</a> a następnie w prawym górnym rogu wybieramy opcję <img style="height:1em;" src="./assets/helloworld/fork.jpg"/>. Wybieramy stworzenie projektu w przestrzeni naszego użytkownika.</p>
+                            <img src="./assets/helloworld/fork_details.jpg"/>
+                            <p>Po chwili powinniśmy zobaczyć stronę podobną do tej:</p>
+                            <img src="./assets/helloworld/github_repo.jpg"/>
+                            <p>Klikamy na i kopiujemy ten link do konsoli git bash poprzedzając go tekstem "git clone ".</p>
+                            <p>Komenda git i jej efekt powinien wyglądać jak ta poniżej.</p>
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </li>
+</ol>
