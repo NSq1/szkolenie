@@ -1,7 +1,7 @@
 # Site settings
 title: Szkolenie
 description: Szkolenie java dla początkujących
-baseurl: "szkolenie" # the subpath of your site, e.g. /blog
+baseurl: "/szkolenie" # the subpath of your site, e.g. /blog
 url: "https://nsq1.github.io/szkolenie/" # the base hostname & protocol for your site, e.g. http://example.com
 
 theme: jekyll-theme-charcoal
