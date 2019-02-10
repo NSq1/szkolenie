@@ -1,56 +1,66 @@
 ol {
     list-style-type: none;
-    counter-reset: item;
+    counter-reset: item
 }
 
 ol.h1>li,
 h1 {
-    font-size: 2em;
+    font-size: 2em
 }
 
 ol.h1>li>div {
-    font-size: initial;
+    font-size: initial
 }
 
 ol.h2>li,
 h2 {
-    font-size: 1.4em;
+    font-size: 1.4em
 }
 
 ol.h2>li>div {
-    font-size: initial;
+    font-size: initial
 }
 
 ol>li {
     display: table;
     counter-increment: item;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.6em
 }
 
 ol>li:before {
     content: counters(item, ".") ". ";
     display: table-cell;
-    padding-right: 0.6em;
+    padding-right: 0.6em
 }
 
 li ol>li {
-    margin: 0;
+    margin: 0
 }
 
 li ol>li:before {
-    content: counters(item, ".") " ";
+    content: counters(item, ".") " "
 }
 
 a[data-featherlight] {
     float: right;
     padding: 0.2em;
-    vertical-align: middle;
+    vertical-align: middle
 }
 
 a[data-featherlight] img {
-    height: 3em;
+    height: 3em
 }
 
-div.featherlight div.featherlight-content{
-    background: rgb(28,28,28);
+div.featherlight div.featherlight-content {
+    background: rgb(28, 28, 28)
+}
+
+input.spoiler {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    font-size: 1em !important;
+    font-weight: bold !important;
+    background-color: #32327c !important;
+    color: rgb(216, 216, 216) !important;
+    border: #00F !important;
 }

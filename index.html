@@ -4,22 +4,30 @@ layout: default
 <style>
 </style>
 <script>
-$("<link/>", {
-    rel: "stylesheet",
-    type: "text/css",
-    href: "./assets/css/szkolenie.css"
-}).appendTo("head");
-
-window.addEventListener('load', function() {
-    $('.gallery').magnificPopup({
-        type: 'image',
-        closeOnContentClick: true,
-        mainClass: 'mfp-img-mobile',
-        image: {
-            verticalFit: false
-        }
-    });
+    window.addEventListener('load', function() {
+    $('input[type="button"].spoiler')
+    	.val('+')
+    	.on('click', function() {
+	    	console.log('click');
+	        $(this)
+	            .closest('div')
+	            .children('pre.spoiler')
+	            .toggle('slow');
+	        if (this.value == '-') {
+	            this.value = '+';
+	        } else {
+	            this.value = '-';
+	        };
+	        return false;
+    	});
 }, false);
+$.getScript("./assets/js/featherlight.min.js");
+$('head')
+	.append($('<link rel="stylesheet" type="text/css" />')
+	.attr('href', './assets/css/szkolenie.css'));
+$('head')
+	.append($('<link rel="stylesheet" type="text/css" />')
+	.attr('href', '//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css'));
 </script>
 <div id="mylightbox"></div>
 <ol class="h1">
@@ -186,8 +194,9 @@ window.addEventListener('load', function() {
                     <li><h2 id="99_Bottles_of_Beer">Zadanie do realizacji</h2>
                         <div>
                             <p>Zmodyfikować program Hello World tak aby po powitaniu wydrukować tekst piosenki „99 Bottles of beer” (https://pl.wikipedia.org/wiki/99_Bottles_of_Beer).</p>
-                            <p>Efektem uruchomienia programu powinno być wydrukowanie tekstu:</p>
-                            <pre>
+                            <p>Efektem uruchomienia programu powinno być wydrukowanie tekstu:
+                                <input type="button" class="spoiler" value="Show" style="width:78px; font-size:10px; margin:0px; padding:0px;">
+                                <pre class="spoiler" style="display: none;">
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around - 98 bottles of beer on the wall.
 
@@ -210,6 +219,7 @@ Take one down and pass it around - 1 bottles of beer on the wall.
 
 1 bottle of beer on the wall, 1 bottle of beer. 
 Take it down and pass it around - no more bottles of beer on the wall.</pre>
+                            </p>
                             <p>Następnie wykonać w katalogu projektu komendy git:</p>
                             <pre>
 $ git commit -am '99 Bottles of beer'
@@ -226,7 +236,8 @@ $ git push </pre>
                                     <li>ze ściany ściągamy i przekazujemy na raz 4 piwa.</li>
                                 </ul>
                             </p>
-                            <p>Efektem uruchomienia programu powinno być wydrukowanie tekstu:</p><pre>
+                            <p>Efektem uruchomienia programu powinno być wydrukowanie tekstu: <input type="button" class="spoiler" value="Show" style="width:78px; font-size:10px; margin:0px; padding:0px;">
+                                <pre class="spoiler" style="display: none;">
 100 bottles of beer on the wall, 100 bottles of beer.
 Take one down and pass it around - 99 bottles of beer on the wall.
 Take one down and pass it around - 98 bottles of beer on the wall.
@@ -246,6 +257,7 @@ Take one down and pass it around - 3 bottles of beer on the wall.
 Take one down and pass it around - 2 bottles of beer on the wall.
 Take one down and pass it around - 1 bottles of beer on the wall.
 Take it down and pass it around - no more bottles of beer on the wall.</pre>
+                            </p>
                             <p>Następnie wykonać w katalogu projektu komendy git:</p><pre>
 $ git commit -am 'Array of the bottles of beer – 4 down'
 $ git push</pre>
@@ -257,7 +269,3 @@ $ git push</pre>
         </div>
     </li>
 </ol>
-<script>
-$.getScript("./assets/js/featherlight.min.js");
-$('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css'));
-</script>
