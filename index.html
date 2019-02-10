@@ -4,12 +4,13 @@ layout: default
 <style>
 </style>
 <script>
-prepareGallery = function() {
-    $("<link/>", {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "./assets/css/szkolenie.css"
-    }).appendTo("head");
+$("<link/>", {
+    rel: "stylesheet",
+    type: "text/css",
+    href: "./assets/css/szkolenie.css"
+}).appendTo("head");
+
+window.addEventListener('load', function() {
     $('.gallery').magnificPopup({
         type: 'image',
         closeOnContentClick: true,
@@ -18,8 +19,7 @@ prepareGallery = function() {
             verticalFit: false
         }
     });
-}
-window.addEventListener('load', prepareGallery, false);
+}, false);
 </script>
 <div id="mylightbox"></div>
 <ol class="h1">
