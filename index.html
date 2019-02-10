@@ -2,59 +2,26 @@
 layout: default
 ---
 <style>
-ol {
-    list-style-type: none;
-    counter-reset: item;
-}
-
-ol.h1>li,
-h1 {
-    font-size: 2em;
-}
-
-ol.h1>li>div {
-    font-size: initial;
-}
-
-ol.h2>li,
-h2 {
-    font-size: 1.4em;
-}
-
-ol.h2>li>div {
-    font-size: initial;
-}
-
-ol>li {
-    display: table;
-    counter-increment: item;
-    margin-bottom: 0.6em;
-}
-
-ol>li:before {
-    content: counters(item, ".") ". ";
-    display: table-cell;
-    padding-right: 0.6em;
-}
-
-li ol>li {
-    margin: 0;
-}
-
-li ol>li:before {
-    content: counters(item, ".") " ";
-}
 </style>
 <script>
-realignViewPoint = function(){
-	if(window.location.href.indexOf("#") > 0){
-    	document.documentElement.scrollTop = document.documentElement.scrollTop - $("div#header").height() - 5;
-    	console.log('View Point realigned');
-    }
+prepareGallery = function() {
+    $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/assets/css/szkolenie.css"
+    }).appendTo("head");
+    $('.gallery').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+            verticalFit: false
+        }
+    });
 }
-window.addEventListener('hashchange', realignViewPoint, false);
-window.addEventListener('load', realignViewPoint, false);
+window.addEventListener('load', prepareGallery, false);
 </script>
+<div id="mylightbox"></div>
 <ol class="h1">
     <li>
         <div><h1 id="instroduction">Słowem wstępu</h1>
@@ -99,16 +66,16 @@ window.addEventListener('load', realignViewPoint, false);
                 </li>
                 <li>
                     <div><h2 id="jdk8-downloads-2133151">Java SDK + JRE 1.8</h2>
-                        <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html ">Java SE Development Kit 8 Downloads</a></p>
-                        <img src="./assets/install/jdk_license.jpg"/>
-                        <p>Akceptujemy licencje i pobieramy odpowiednią javę (preferujemy x64 jeśli mamy windows 64 bitowy). Instalator po zainstalowaniu SDK powinien zaproponować instalację JRE, na którą również wyrażamy zgodę.</p>
+                        <p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit 8 Downloads</a></p>
+                        <p> <a href="/assets/img/install/jdk_license.jpg" data-featherlight="image"><img src="./assets/img/install/jdk_license.jpg"/></a>
+                            Akceptujemy licencje i pobieramy odpowiednią javę (preferujemy x64 jeśli mamy windows 64 bitowy). Instalator po zainstalowaniu SDK powinien zaproponować instalację JRE, na którą również wyrażamy zgodę.</p>
                     </div>
                 </li>
                 <li>
                     <div><h2 id="eclipse">Eclipse</h2>
-                        <p>Pobieramy oraz instalujemy <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Enterprise Java Developers</a></p>
-                        <img src="./assets/install/eclipse_jee.png"/>
-                        </div>
+                        <p>Pobieramy oraz instalujemy <a href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Enterprise Java Developers</a>
+                            <a  href="/assets/img/install/eclipse_jee.png" data-featherlight="image"><img src="./assets/img/install/eclipse_jee.png"/></a></p>
+                    </div>
                 </li>
                 <li>
                     <div><h2 id="git">Git</h2>
@@ -118,12 +85,8 @@ window.addEventListener('load', realignViewPoint, false);
                 <li>
                     <div><h2 id="google_translate">Opcjonalnie: Google translate w Chrome </h2>
                         <p>Większość materiałów dodatkowych (stron WWW) będzie anglojęzyczna, współpracę może ułatwić wtyczka do chrome umożliwiająca szybkie przetłumaczenie fragmentu/strony. Proszę jedynie mieć na uwadze, że strony mogą (i pewnie często będą) zawierać kod/komendy w postaci tekstu, a nie obrazka i one również zostaną przetłumaczone razem z resztą strony i w związku z tym będą błędne.</p>
-                        <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en">google-translate</a></p>
-                        <div>
-                            <div style="width:55%;float:left;padding:2%"><img src="./assets/install/google_translate.png"/></div>
-                                <div style="width:40%;float:left">Po instalacji klikamy prawym na wtyczkę, wybieramy opcje i zmieniamy język tłumaczenia na Polski.</div>
-                            </div>
-                        </div>
+                        <a  href="./assets/img/install/google_translate.png" data-featherlight="image"><img src="./assets/img/install/google_translate.png"/></a>
+                        <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en">google-translate</a><br />Po instalacji klikamy prawym na wtyczkę, wybieramy opcje i zmieniamy język tłumaczenia na Polski.</p>
                 </li>
             </ol>
         </div>
@@ -133,47 +96,168 @@ window.addEventListener('load', realignViewPoint, false);
             <ol class="h2">
                 <li>
                     <div>
-                        <h2>Pierwsze kroki</h2>
+                        <h2 id="firstSteps">Pierwsze kroki</h2>
                         <p>Proszę o zapoznanie się/realizację ćwiczenia: </p>
                         <p><a href="https://stormit.pl/pierwszy-program-java/">Jak napisać swój pierwszy program Java | Kurs Java</a></p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <h2>Uruchamiamy Eclipse</h2>
-                        <p>Odszukujemy i uruchamiamy <img style="vertical-align:middle;height:2em;" src="./assets/helloworld/eclipse_icon.jpg"/></p>
-                            <p>Eclipse poprosi nas o wyznaczenie przestrzeni roboczej na rozwijane projekty. Mogą być to nawet "moje dokumeny", ale radzę stworzyć podkatalog związanych tylko i wyłącznie z naszym szkoleniem. U mnie wygląda to następująco:</p>
-                            <img src="./assets/helloworld/eclipse_workspace.jpg"/>
-                            <p>Eclipse przywita nas powitalną zakładką "Welcome", którą możemy od razu zamknąć. Eclipse powinien wyglądać w następujący sposób.</p>
-                            <img src="./assets/helloworld/eclipse_light.jpg"/>
+                        <h2 id="eclipse_run">Uruchamiamy Eclipse</h2>
+                        <p>Odszukujemy i uruchamiamy <img style="vertical-align:middle;height:2em;" src="./assets/img/helloworld/eclipse_icon.jpg"/></p>
+                            <p><a href="/assets/img/helloworld/eclipse_workspace.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_workspace.jpg"/></a>Eclipse poprosi nas o wyznaczenie przestrzeni roboczej na rozwijane projekty. <br />Mogą być to nawet "moje dokumeny", ale radzę stworzyć podkatalog związanych tylko i wyłącznie z naszym szkoleniem. U mnie wygląda to następująco:
+                            </p>
+                            <p><a href="/assets/img/helloworld/eclipse_light.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_light.jpg"/></a>Eclipse przywita nas powitalną zakładką "Welcome", którą możemy od razu zamknąć. Eclipse powinien wyglądać w następujący sposób.</p>
                             <p>Używam ciemnego motywu kolorów w Eclipse, z takiego będę również zamieszczał wycinki ekranu. Jeśli ktoś obawia się, że inna wersja 'kolorów' może mu utrudnić przyswojenie szkolenia, proponuję zmianę na identyczny z moim.</p>
-                            <p>W tym celu wchodzimy w opcje: Window>Preferences, w nowo otwartym oknie filtrujemy opcje słowem "theme" a następny w sekcji General/Appearance wybieramy Theme: Dark i akceptujemy zmiany</p>
-                            <img src="./assets/helloworld/eclipse_theme.jpg"/>
-                            <p>Eclipse powinien wyglądać następująco</p>
-                            <img src="./assets/helloworld/eclipse_dark.jpg"/>
-                        </div>
+                            <p><a href="/assets/img/helloworld/eclipse_theme.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_theme.jpg"/></a>W tym celu wchodzimy w opcje: Window>Preferences, w nowo otwartym oknie filtrujemy opcje słowem "theme" a następny w sekcji General/Appearance wybieramy Theme: Dark i akceptujemy zmiany</p>
+                            <p><a href="/assets/img/helloworld/eclipse_dark.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_dark.jpg"/></a>Eclipse powinien wyglądać następująco</p>
+                    </div>
                 </li>
                 <li>
-                    <div>
-                        <h2>Uruchamiamy Git Bash</h2>
-                        <p>Odszukujemy i uruchamiamy <img style="vertical-align:middle;height:2em;" src="./assets/helloworld/git_icon.jpg"/> </p>
+                    <div> <h2 id="git_run">Uruchamiamy Git Bash</h2>
+                        <p>Odszukujemy i uruchamiamy <img style="vertical-align:middle;height:2em;" src="./assets/img/helloworld/git_icon.jpg"/> </p>
                             <p>Następnie przy pomocy komendy ‘cd’ przechodzimy do katalogu, który wybraliśmy jako workspace dla Eclipse. U mnie jest to:</p>
                             <pre><span>$ cd /c/Users/micha/OneDrive/eclipse-workspace/</span></pre>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <h2>Ściągamy projekt Hello World</h2>
-                        <p>Wchodzimy na <a href="https://github.com/eb-java/hello-world">eb-java/hello-world</a> a następnie w prawym górnym rogu wybieramy opcję <img style="vertical-align:middle;height:1em;" src="./assets/helloworld/fork.jpg"/>. Wybieramy stworzenie projektu w przestrzeni naszego użytkownika.</p>
-                            <img src="./assets/helloworld/fork_details.jpg"/>
-                            <p>Po chwili powinniśmy zobaczyć stronę podobną do tej:</p>
-                            <img src="./assets/helloworld/github_repo.jpg"/>
-                            <p>Klikamy na <img style="vertical-align:middle;height:1em;" src="./assets/helloworld/github_download.jpg"/> i kopiujemy ten link do konsoli git bash poprzedzając go tekstem "git clone ".</p>
-                                <p>Komenda git i jej efekt powinien wyglądać jak ta poniżej.</p>
-                                <img src="./assets/helloworld/git_clone.jpg"/>
+                        <h2 id="github_helloworld">Ściągamy projekt Hello World</h2>
+                        <p>Wchodzimy na <a href="https://github.com/eb-java/hello-world">eb-java/hello-world</a> a następnie w prawym górnym rogu wybieramy opcję <img style="vertical-align:middle;height:1em;" src="./assets/img/helloworld/fork.jpg"/>.</p>
+                            <p style="float:left">Wybieramy stworzenie projektu w przestrzeni naszego użytkownika.</p>
+                            <a style="float:left" href="/assets/img/helloworld/fork_details.jpg" data-featherlight="image"><img src="./assets/img/helloworld/fork_details.jpg"/></a>
+                            <p style="float:left">Po chwili powinniśmy zobaczyć stronę podobną do tej:</p><a style="float:left" href="/assets/img/helloworld/github_repo.jpg" data-featherlight="image"><img src="./assets/img/helloworld/github_repo.jpg"/></a>
+                            <p style="float:left">Klikamy na <img style="vertical-align:middle;height:1em;" src="./assets/img/helloworld/github_download.jpg"/> i kopiujemy ten link do konsoli git bash poprzedzając go tekstem "git clone ".</p>
+                                <p style="float:left">Komenda git i jej efekt powinien wyglądać podobnie do:</p><a style="float:left" href="/assets/img/helloworld/git_clone.jpg" data-featherlight="image"><img src="./assets/img/helloworld/git_clone.jpg"/></a>
+                    </div>
+                </li>
+                <li>
+                    <div><h2 id="eclipse_import">Importujemy i uruchamiamy projekt</h2>
+                        <p>Wracamy do Eclipse, wybieramy opcję File>Import.</p>
+                        <p>Wybieramy Maven>Existing Maven Project.</p>
+                        <p>Odszukujemy projekt na dysku, ja robię to przez wybranie w Root Directory mojego workspace. A potem zaznaczenie wybranych projektów do zaimportowania checkboxem.<a href="/assets/img/helloworld/eclipse_import_maven.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_import_maven.jpg"/></a></p>
+                        <p>Następnie klikamy Finish. Po zaimportowaniu projekt "hello-world" powinien pojawić się w sekcji "Project Explorer".<a href="/assets/img/helloworld/eclipse_project.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_project.jpg"/></a></p>
+                        <p>Otwieramy klasę HelloWorld a następnie uruchamiamy przez kliknięcie na górnym pasku run <img style="vertical-align:middle;height:1em;" src="./assets/img/helloworld/eclipse_run.jpg"/>run</p>
+                            <p>W sekcji sekcji "Console" powinniśmy zobaczyć napis "Hello World!" jak obok
+                                <a href="/assets/img/helloworld/eclipse_console.jpg" data-featherlight="image"><img src="./assets/img/helloworld/eclipse_console.jpg"/></a></p>
                     </div>
                 </li>
             </ol>
         </div>
     </li>
+    <li>
+        <div><h1 id="basic_elements">Podstawowe elementy programowania</h1>
+            <p>
+                <ol>
+                    <li><h2 id="data_types">Typy danych</h2>
+                        <ul>
+                            <li><a href="https://stormit.pl/zmienne/">Zmienne</a></li>
+                            <li><a href="https://stormit.pl/typy-proste/">Typy proste</a></li>
+                            <li><a href="https://stormit.pl/typy-obiektowe/">Typy obiektowe</a></li>
+                        </ul>
+                    </li>
+                    <li><h2 id="operations">Operacje</h2>
+                        <ul>
+                            <li><a href="https://stormit.pl/operatory-matematyczne/">Operatory matematyczne</a></li>
+                            <li><a href="https://stormit.pl/operatory-relacyjne/">Operatory relacyjne</a></li>
+                        </ul>
+                    </li>
+                    <li><h2 id="conditionals">Instrukcje warunkowe</h2>
+                        <ul>
+                            <li><a href="https://stormit.pl/operatory-logiczne/">Operatory logiczne</a></li>
+                            <li><a href="https://stormit.pl/if-else/">Instrukcje warunkowe</a></li>
+                        </ul>
+                    </li>
+                    <li><h2 id="arrays">Tablice i kolekcje</h2>
+                        <ul>
+                            <li><a href="https://stormit.pl/tablice/">Tablice</a></li>
+                            <li>Kolekcje zostaną omówione później</li>
+                        </ul>
+                    </li>
+                    <li><h2 id="loops">Pętle</h2>
+                        <ul>
+                            <li><a href="https://stormit.pl/inkrementacja/">Inkrementaja/dekremantacja</a></li>
+                            <li><a href="https://stormit.pl/petle/#for">For</a></li>
+                            <li><a href="https://stormit.pl/petle/#foreach">Foreach</a></li>
+                            <li>Dla ambitnych na tej samej stronie [while] oraz [do while].</li>
+                            <li>Sekcje [Polecenia break i continue] oraz [Nieskończona pętla] są praktycznie nieużywane i można je traktować jako ciekawostki.</li>
+                        </ul>
+                    </li>
+                    <li><h2 id="99_Bottles_of_Beer">Zadanie do realizacji</h2>
+                        <div>
+                            <p>Zmodyfikować program Hello World tak aby po powitaniu wydrukować tekst piosenki „99 Bottles of beer” (https://pl.wikipedia.org/wiki/99_Bottles_of_Beer).</p>
+                            <p>Efektem uruchomienia programu powinno być wydrukowanie tekstu:</p>
+                            <pre>
+99 bottles of beer on the wall, 99 bottles of beer.
+Take one down and pass it around - 98 bottles of beer on the wall.
+
+98 bottles of beer on the wall, 98 bottles of beer. 
+Take one down and pass it around - 97 bottles of beer on the wall.
+
+97 bottles of beer on the wall, 97 bottles of beer.
+Take one down and pass it around - 96 bottles of beer on the wall.
+
+(...)
+
+4 bottles of beer on the wall, 4 bottles of beer. 
+Take one down and pass it around - 3 bottles of beer on the wall.
+
+3 bottles of beer on the wall, 3 bottles of beer. 
+Take one down and pass it around - 2 bottles of beer on the wall.
+
+2 bottles of beer on the wall, 2 bottles of beer. 
+Take one down and pass it around - 1 bottles of beer on the wall.
+
+1 bottle of beer on the wall, 1 bottle of beer. 
+Take it down and pass it around - no more bottles of beer on the wall.</pre>
+                            <p>Następnie wykonać w katalogu projektu komendy git:</p>
+                            <pre>
+$ git commit -am '99 Bottles of beer'
+$ git push </pre>
+                            <p>Po zakończeniu proszę poinformować o zrealizowaniu zadania na kanale discord #99BottlesOfBeer</p>
+                        </div>
+                    </li>
+                    <li><h2 id="99_Bottles_of_Beer_extended">Zadanie dodatkowe</h2>
+                        <div>
+                            <p>Zmodyfikuj zadanie 4.6 tak aby:
+                                <ul>
+                                    <li>oprzeć się na tablicy</li>
+                                    <li>na ścianie początkowo znajduje się 100 piw</li>
+                                    <li>ze ściany ściągamy i przekazujemy na raz 4 piwa.</li>
+                                </ul>
+                            </p>
+                            <p>Efektem uruchomienia programu powinno być wydrukowanie tekstu:</p><pre>
+100 bottles of beer on the wall, 100 bottles of beer.
+Take one down and pass it around - 99 bottles of beer on the wall.
+Take one down and pass it around - 98 bottles of beer on the wall.
+Take one down and pass it around - 97 bottles of beer on the wall.
+Take one down and pass it around - 96 bottles of beer on the wall.
+
+(...)
+
+8 bottles of beer on the wall, 8 bottles of beer.
+Take one down and pass it around - 7 bottles of beer on the wall.
+Take one down and pass it around - 6 bottles of beer on the wall.
+Take one down and pass it around - 5 bottles of beer on the wall.
+Take one down and pass it around - 4 bottles of beer on the wall.
+
+4 bottles of beer on the wall, 4 bottles of beer.
+Take one down and pass it around - 3 bottles of beer on the wall.
+Take one down and pass it around - 2 bottles of beer on the wall.
+Take one down and pass it around - 1 bottles of beer on the wall.
+Take it down and pass it around - no more bottles of beer on the wall.</pre>
+                            <p>Następnie wykonać w katalogu projektu komendy git:</p><pre>
+$ git commit -am 'Array of the bottles of beer – 4 down'
+$ git push</pre>
+                            <p>Po zakończeniu proszę poinformować o zrealizowaniu zadania dodatkowego na kanale discord #99BottlesOfBeer</p>
+                        </div>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </li>
 </ol>
+<script>
+$.getScript("/assets/js/featherlight.min.js");
+$('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css'));
+</script>
