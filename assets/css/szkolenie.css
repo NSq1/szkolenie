@@ -1,44 +1,7 @@
-ol {
-    list-style-type: none;
-    counter-reset: item
-}
-
-ol.h1>li,
-h1 {
-    font-size: 2em
-}
-
-ol.h1>li>div {
-    font-size: initial
-}
-
-ol.h2>li,
-h2 {
-    font-size: 1.4em
-}
-
-ol.h2>li>div {
-    font-size: initial
-}
-
-ol>li {
-    display: table;
-    counter-increment: item;
-    margin-bottom: 0.6em
-}
-
-ol>li:before {
-    content: counters(item, ".") ". ";
-    display: table-cell;
-    padding-right: 0.6em
-}
-
-li ol>li {
-    margin: 0
-}
-
-li ol>li:before {
-    content: counters(item, ".") " "
+.h1 li {
+    list-style: decimal-leading-zero;
+    font-size: 2em;
+    margin: 0 0 0 2em;
 }
 
 a[data-featherlight] {
