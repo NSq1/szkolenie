@@ -1,0 +1,73 @@
+---
+layout: default
+permalink: /basic_exercises/
+---
+<script>{% include szkolenie_customize.js %}</script>
+<h1 id="basic_exercises">[Zadania] Podstawowe elementy programowania</h1>
+<p>Wykonaj fork projektu <a href="https://github.com/eb-java/basic-exercises">basic-exercises</a>. Przy pomocy git ściągnij swoją wersję projektu do workspace, a następnie zaimportuj do Eclipse jako:
+<div style="display:inline-block">
+    <p style="float:left">[Existing Projects into Workspace]</p>
+    <a style="float:left;margin-left:2em" href="./assets/img/existing_projects_into_workspace.jpg" data-featherlight="image">
+        <img style="height:8em" src="./assets/img/existing_projects_into_workspace.jpg" />
+    </a>
+    <a style="float:left;margin-left:2em" href="./assets/img/existing_projects_into_workspace_details.jpg" data-featherlight="image">
+        <img style="height:8em" src="./assets/img/existing_projects_into_workspace_details.jpg" />
+    </a>
+</div>
+<p>Pod tytułem każdego z zadań znajduje się nazwa pliku w którym należy wykonać zadanie</p>
+<p>Każdy klasa do uzupełniania (katalog src), posiada odpowiednią klasę do jej przetestowania (katalog test)</p>
+<p>Testy uruchamiamy w ten sam sposób co normalną klasę zawierającą metodę main, klikając <img style="vertical-align:middle;height:1em;" src="./assets/img/eclipse_run.jpg" />run</p>
+<div style="display:inline-block">
+    <p style="float:left; width:20em">W przypadku problemów z uruchomieniem należy wybrać opcje szczegółowe zgodnie z: </p>
+    <a style="float:left" href="./assets/img/run_junit.jpg" data-featherlight="image"><img style="height:8em" src="./assets/img/run_junit.jpg"/></a>
+</div>
+<div style="display:inline-block;">
+    <p>Wyniki testów możemy zobaczyć w widoku JUnit, w przypadku jego braku można go wyświetlić przez menu Window>Show View>Other>JUnit<br/>W przyszłości będziemy używali unit testów (testy jednostkowe) aby spradzić działanie pisanych aplikacji.<br/>Tym razem jednak dodałem do każdego testu drukowanie jego wyników do konsoli</p>
+    <a style="float:left" href="./assets/img/junit_details.jpg" data-featherlight="image"><img style="height:8em" src="./assets/img/junit_details.jpg"/></a>
+</div>
+<p>(*) oznaczono zadania dodatkowe</p>
+<ol class="h2">
+    <li>
+        <h2 id="pow">Potęgowanie liczb całkowitych</h2>
+        <p><pre>Potegowanie.java</pre></p>
+        <p>Podnosimy pierwszą przekazaną wartość do potęgi w wysokości drugiej</p>
+    </li>
+    <li>
+        <h2 id="sqrt">(*)Pierwiastek kwadratowy w zbiorze liczb naturalnych</h2>
+        <p><pre>PierwiastekKwadratowyLubZero.java</pre></p>
+        <div>Oczekiwane wyniki:
+            <ul>
+                <li>liczba naturalna, która jest pierwiastkiem zadanej wartości</li>
+                <li>0 - jeśli pierwiastek liczby nie istnieje w zbiorze liczb naturalnych</li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <h2 id="fibonacci">Ciąg Fibonacciego</h2>
+        <p><pre>CiagFibonacciego.java</pre></p>
+        <p>Wyznaczenie n-tej liczby <a href="https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego">Ciągu Fibonanacciego</a></p>
+    </li>
+    <li>
+        <h2 id="fibonacci_r">(*)Ciąg Fibonacciego przy użyciu rekurencji</h2>
+        <p><pre>CiagFibonacciegoRekurencja.java</pre></p>
+        <p><a href="http://ggoralski.pl/?p=1758">Czym jest rekurencja</a></p>
+    </li>
+    <li>
+        <h2 id="is_prime_number">Czy liczba pierwsza</h2>
+        <p><pre>CzyLiczbaPierwsza.java</pre></p>
+        <div>
+            Określamy czy przekazana wartość jest liczbą pierwszą
+            <br/>Przyjmujemy za fakt, że 0 i 1 nie są liczbami pierwszymi
+            <br/>Oczekiwane wyniki:
+            <ul>
+                <li>true - podana liczba jest liczbą pierwszą</li>
+                <li>false - podana liczba nie jest liczbą pierwszą</li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <h2 id="prime_numbers">(*)Liczby pierwsze</h2>
+        <p><pre>LiczbyPierwsze.java</pre></p>
+        <p>Wynikiem działania metody ma być tablica liczb całkowitch ( int[] ) zawierająca wszystkie liczby pierwsze z przedziału [0..maksimum]</p>
+    </li>
+</ol>
