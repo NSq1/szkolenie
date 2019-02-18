@@ -3,9 +3,7 @@ layout: default
 permalink: /index/
 toc: false
 ---
-<script>
-{ % include szkolenie_customize.js % }
-</script>
+<script>{% include szkolenie_customize.js %}</script>
 <ol class="h1">
     <li>
         <h1 id="instroduction"><a href="{{ "/" | relative_url }}introduction/">Słowem wstępu</a></h1>
@@ -17,9 +15,9 @@ toc: false
         <h1 id="hello_world"><a href="{{ "/" | relative_url }}hello_world/">Hello World</a></h1>
     </li>
     <li>
-        <h1 id="basic_elements"><a href="/basic_elements/">Podstawowe elementy programowania</a></h1>
+        <h1 id="basic_elements"><a href="{{ "/" | relative_url }}basic_elements/">Podstawowe elementy programowania</a></h1>
     </li>
-    <li style="display:none">
-        <h1 id="basic_exercises"><a href="/basic_exercises/">[Zadanka]Podstawowe elementy programowania</a></h1>
+    <li>
+        <h1 id="basic_exercises"><a href="{{ "/" | relative_url }}wip/">[Zadanka]Podstawowe elementy programowania</a></h1>
     </li>
 </ol>
